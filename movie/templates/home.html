@@ -11,8 +11,8 @@
         {% extends 'base.html' %}
         {% block content %}
         <div class="container mt-5">
-            <h1 class="mb-3">Upcoming ...</h1>
-            <div id="movieCarousel" class="carousel slide mb-3" data-ride="carousel">
+            <h1 class="mb-3">Productos</h1>
+            <div id="movieCarousel" class="carousel mb-3" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img src="https://via.placeholder.com/800x400/FF5733/FFFFFF?text=Movie1" class="d-block w-100" alt="Movie 1">
@@ -23,11 +23,11 @@
               </div>
               <a class="carousel-control-prev" href="#movieCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only">Anterior</span>
               </a>
               <a class="carousel-control-next" href="#movieCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only">Siguiente</span>
               </a>
             </div>
         </div>
@@ -36,11 +36,11 @@
             <form action="">
                 <div class="mb-3">
                     <label for="searchMovie" class="form-label">
-                        Search for Movie:
+                        Buscar un producto:
                     </label>
                     <input type="text" class="form-control" name="searchMovie" />
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">Buscar</button>
             </form>
 
             <p> Searching for {{ searchTerm }} </p>
@@ -61,7 +61,7 @@
                             <p class="card-text">{{ movie.description }}</p> 
                             {% if movie.url %} 
                             <a href="{{ movie.url }}" class="btn btn-primary"> 
-                                Movie Link 
+                                Producto Link 
                             </a> 
                             {% endif %} 
                         </div> 
