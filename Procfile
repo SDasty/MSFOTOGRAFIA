@@ -1,1 +1,1 @@
-web: gunicorn msfotografia.wsgi --log-file -
+web: gunicorn moviereviews.wsgi --log-file -
