@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 
+# settings.py
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,9 +31,9 @@ MEDIA_URL = '/media/'
 SECRET_KEY = '2hl5684eyz&6jd+3-rx=vg8enjb+d=f06p^lt^z%%nel1qds_q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['msfotografia.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
