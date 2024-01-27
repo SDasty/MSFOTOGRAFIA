@@ -17,3 +17,10 @@ class Review(models.Model):
  
  def __str__(self):
     return self.text
+
+
+class CarouselImage(models.Model):
+    image = models.ImageField(upload_to='carousel_images/')
+
+    def __str__(self):
+        return f'Carousel Image {self.pk}'

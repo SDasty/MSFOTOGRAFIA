@@ -3,17 +3,23 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 
-from .models import Movie, Review
+from .models import Movie, Review, CarouselImage
 
 from .forms import ReviewForm
+
+
 
 def home(request):
     searchTerm = request.GET.get('searchMovie')
     if searchTerm: 
-       movies = Movie.objects.filter(title__icontains=searchTerm) 
+        movies = Movie.objects.filter(title__icontains=searchTerm) 
     else: 
         movies = Movie.objects.all()
-    return render(request, 'home.html', {'searchTerm':searchTerm, 'movies': movies})
+
+    # Obtén las imágenes del carrusel
+    carousel_images = CarouselImage.objects.all()
+
+    return render(request, 'home.html', {'searchTerm': searchTerm, 'movies': movies, 'carousel_images': carousel_images})
 
 
 def about(request):
@@ -60,3 +66,4 @@ def deletereview(request, review_id):
     review = get_object_or_404(Review, pk=review_id, user=request.user)
     review.delete()
     return redirect('detail', review.movie.id)
+
