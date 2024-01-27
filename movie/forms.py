@@ -11,7 +11,7 @@ class ReviewForm(ModelForm):
         model = Review
         fields = ['text','watchAgain']
         labels = {
-            'watchAgain': ('Watch Again')
+            'watchAgain': ('Lo compraría')
         }
         widgets = {
         'text': Textarea(attrs={'rows': 4}),

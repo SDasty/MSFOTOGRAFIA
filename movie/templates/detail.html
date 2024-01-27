@@ -18,7 +18,7 @@
             {% if user.is_authenticated %}
             <a href="{% url 'createreview' movie.id %}"
                 class="btn btn-primary">
-                Add Review
+                Comentar
             </a>
             {% endif %} 
         </p>
@@ -28,7 +28,7 @@
         {% for review in reviews %}
         <li class="list-group-item pb-3 pt-3">
             <h5 class="card-title">
-                Review by {{ review.user.username }}
+                Comentado por {{ review.user.username }}
             </h5>
             <h6 class="card-subtitle mb-2 text-muted">
                  {{ review.date }}
@@ -36,10 +36,10 @@
             <p class="card-text">{{ review.text }}</p>
             {% if user.is_authenticated and user == review.user %}
             <a class="btn btn-primary me-2" href="{% url 'updatereview' review.id %}">
-                Edit
+                Editar
             </a>
             <a class="btn btn-danger" href="{% url 'deletereview' review.id %}">
-                Delete
+                Eliminar
             </a>
             {% endif %}
         </li>
